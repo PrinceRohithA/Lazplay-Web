@@ -2,7 +2,7 @@ const LostLands = () => {
   return (
     <div className="page-container">
       <div className="game-header">
-        <div className="container">
+        <div className="container game-header-content">
           <h1>Lost Lands</h1>
           <p>Embark on an epic journey through mysterious lands filled with puzzles and adventure</p>
           <a href="#play" className="btn-large">Play Now</a>
@@ -24,20 +24,21 @@ const LostLands = () => {
               <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Screenshot 4" />
             </div>
             
-            <h2>Features</h2>
+            <h2>Premium Features</h2>
             <ul>
               <li>Engaging story with multiple endings</li>
               <li>100+ challenging puzzles</li>
               <li>Beautifully crafted environments</li>
               <li>Original soundtrack</li>
               <li>Regular content updates with new chapters</li>
+              <li>Exclusive golden artifacts to collect</li>
             </ul>
 
             <div id="play" className="game-embed-container">
               <iframe 
                 className="game-embed"
                 title="Lost Lands Game"
-                src="/games/lost-lands/Lost Lands.html"
+                src="/games/lost-lands/index.html"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

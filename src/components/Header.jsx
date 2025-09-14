@@ -6,8 +6,8 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
-            <i className="fas fa-gamepad"></i>
-            <span>GameHub</span>
+            <i className="fas fa-crown"></i>
+            <span>GameHub Premium</span>
           </Link>
           <nav>
             <ul>
@@ -15,7 +15,7 @@ const Header = () => {
               <li><Link to="/platform-runner">Platform Runner</Link></li>
               <li><Link to="/lost-lands">Lost Lands</Link></li>
               <li><a href="#">Community</a></li>
-              <li><a href="#">News</a></li>
+              <li><a href="#">Support</a></li>
             </ul>
           </nav>
           <div className="auth-buttons">

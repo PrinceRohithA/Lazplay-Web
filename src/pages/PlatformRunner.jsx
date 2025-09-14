@@ -2,9 +2,9 @@ const PlatformRunner = () => {
   return (
     <div className="page-container">
       <div className="game-header">
-        <div className="container">
+        <div className="container game-header-content">
           <h1>Platform Runner</h1>
-          <p>Run, jump, and dash through challenging levels in this fast-paced platformer</p>
+          <p>Run, jump, and dash through challenging levels in this premium platformer</p>
           <a href="#play" className="btn-large">Play Now</a>
         </div>
       </div>
@@ -24,13 +24,14 @@ const PlatformRunner = () => {
               <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1157&q=80" alt="Screenshot 4" />
             </div>
             
-            <h2>Features</h2>
+            <h2>Premium Features</h2>
             <ul>
               <li>50+ challenging levels with increasing difficulty</li>
               <li>10 unique characters to unlock</li>
               <li>Special abilities and power-ups</li>
               <li>Global leaderboards and achievements</li>
               <li>Regular content updates with new levels</li>
+              <li>Exclusive gold-themed content</li>
             </ul>
 
             <div id="play" className="game-embed-container">

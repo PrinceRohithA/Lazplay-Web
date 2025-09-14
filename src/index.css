@@ -2,25 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
-  --primary: #6c5ce7;
-  --secondary: #a29bfe;
-  --dark: #2d3436;
-  --light: #f5f6fa;
-  --accent: #fd79a8;
-  --success: #00b894;
-  --warning: #fdcb6e;
-  --danger: #d63031;
+  --black: #0a0a0a;
+  --dark: #121212;
+  --gold: #FFD700;
+  --light-gold: #FFE55C;
+  --dark-gold: #B8860B;
+  --light: #f5f5f5;
+  --gray: #2a2a2a;
+  --light-gray: #3a3a3a;
 }
 
 body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--black);
   color: var(--light);
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 .container {
@@ -31,13 +32,14 @@ body {
 
 /* Header Styles */
 header {
-  background-color: rgba(13, 18, 36, 0.9);
+  background-color: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--dark-gold);
 }
 
 .header-content {
@@ -52,12 +54,12 @@ header {
   gap: 10px;
   font-size: 24px;
   font-weight: 700;
-  color: var(--light);
+  color: var(--gold);
   text-decoration: none;
 }
 
 .logo i {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 nav ul {
@@ -75,7 +77,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 nav a::after {
@@ -85,7 +87,7 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary);
+  background-color: var(--gold);
   transition: width 0.3s;
 }
 
@@ -110,24 +112,25 @@ nav a:hover::after {
 .btn-login {
   background: transparent;
   color: var(--light);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--gold);
 }
 
 .btn-login:hover {
-  background: var(--primary);
+  background: var(--gold);
+  color: var(--dark);
 }
 
 .btn-signup {
-  background: var(--primary);
-  color: var(--light);
+  background: var(--gold);
+  color: var(--dark);
 }
 
 .btn-signup:hover {
-  background: var(--secondary);
+  background: var(--light-gold);
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 229, 92, 0.3);
 }
 
-/* Page Container */
 .page-container {
   animation: fadeIn 0.5s ease;
 }
@@ -139,67 +142,108 @@ nav a:hover::after {
 
 /* Home Page */
 .hero {
-  padding: 80px 0;
+  padding: 100px 0;
   text-align: center;
+  background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--black) 20%, transparent 50%, var(--black) 80%);
+  opacity: 0.8;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  background: linear-gradient(to right, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--gold);
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 40px;
-  color: var(--secondary);
+  color: var(--light);
 }
 
 .btn-large {
   padding: 15px 40px;
   font-size: 1.1rem;
-  background: var(--primary);
-  color: white;
+  background: var(--gold);
+  color: var(--dark);
   border-radius: 50px;
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
   transition: all 0.3s;
+  font-weight: 700;
+  border: 2px solid var(--gold);
 }
 
 .btn-large:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+  background: transparent;
+  color: var(--gold);
 }
 
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .game-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, var(--gray), var(--dark));
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dark-gold);
+  position: relative;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.1) 50%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.game-card:hover::before {
+  opacity: 1;
 }
 
 .game-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .game-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-bottom: 2px solid var(--dark-gold);
 }
 
 .game-card-content {
@@ -209,28 +253,67 @@ nav a:hover::after {
 .game-card h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: var(--gold);
 }
 
 .game-card p {
-  color: var(--secondary);
+  color: var(--light);
   margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .game-card .btn {
-  background: var(--primary);
-  color: white;
+  background: var(--gold);
+  color: var(--dark);
   text-decoration: none;
   display: inline-block;
+  font-weight: 600;
+}
+
+.game-card .btn:hover {
+  background: var(--light-gold);
+  box-shadow: 0 5px 15px rgba(255, 229, 92, 0.3);
 }
 
 /* Game Pages */
 .game-header {
-  padding: 60px 0;
+  padding: 100px 0;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3');
+  background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
   background-size: cover;
   background-position: center;
   margin-bottom: 40px;
+  position: relative;
+  border-bottom: 2px solid var(--dark-gold);
+}
+
+.game-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--black) 20%, transparent 50%, var(--black) 80%);
+  opacity: 0.8;
+}
+
+.game-header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.game-header h1 {
+  font-size: 3.5rem;
+  color: var(--gold);
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.game-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: var(--light);
 }
 
 .game-content {
@@ -241,32 +324,52 @@ nav a:hover::after {
 }
 
 .game-info {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, var(--gray), var(--dark));
   padding: 30px;
   border-radius: 15px;
+  border: 1px solid var(--dark-gold);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .game-info h2 {
   margin-bottom: 20px;
-  color: var(--primary);
+  color: var(--gold);
+  font-size: 2rem;
+  border-bottom: 2px solid var(--dark-gold);
+  padding-bottom: 10px;
 }
 
 .game-details {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, var(--gray), var(--dark));
   padding: 30px;
   border-radius: 15px;
+  border: 1px solid var(--dark-gold);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .game-details h3 {
   margin-bottom: 20px;
-  color: var(--primary);
+  color: var(--gold);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--dark-gold);
+  padding-bottom: 10px;
 }
 
 .detail-item {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--dark);
+}
+
+.detail-item span:first-child {
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.detail-item span:last-child {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .screenshot-gallery {
@@ -280,17 +383,20 @@ nav a:hover::after {
   width: 100%;
   border-radius: 10px;
   transition: transform 0.3s;
+  border: 1px solid var(--dark-gold);
 }
 
 .screenshot-gallery img:hover {
   transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
 }
 
 /* Footer */
 footer {
-  background-color: rgba(13, 18, 36, 0.9);
+  background-color: rgba(10, 10, 10, 0.95);
   padding: 60px 0 30px;
   margin-top: 80px;
+  border-top: 1px solid var(--dark-gold);
 }
 
 .footer-content {
@@ -302,7 +408,7 @@ footer {
 .footer-column h3 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .footer-column ul {
@@ -314,13 +420,15 @@ footer {
 }
 
 .footer-column a {
-  color: var(--secondary);
+  color: var(--light);
   text-decoration: none;
   transition: color 0.3s;
+  opacity: 0.8;
 }
 
 .footer-column a:hover {
-  color: var(--primary);
+  color: var(--gold);
+  opacity: 1;
 }
 
 .social-links {
@@ -335,13 +443,16 @@ footer {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gray);
   border-radius: 50%;
   transition: all 0.3s;
+  color: var(--gold);
+  text-decoration: none;
 }
 
 .social-links a:hover {
-  background: var(--primary);
+  background: var(--gold);
+  color: var(--dark);
   transform: translateY(-3px);
 }
 
@@ -349,8 +460,9 @@ footer {
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--secondary);
+  border-top: 1px solid var(--dark-gold);
+  color: var(--light);
+  opacity: 0.7;
 }
 
 /* Responsive Design */
@@ -387,6 +499,32 @@ footer {
   .footer-content {
     grid-template-columns: 1fr;
   }
+  
+  .game-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Premium Badge */
+.premium-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 3;
+}
+
+/* Gold Separator */
+.gold-separator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 30px 0;
+  width: 100%;
 }
 
 /* Game Embed Styles */
@@ -397,6 +535,7 @@ footer {
   border-radius: 10px;
   margin: 20px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dark-gold);
 }
 
 .game-embed-container {

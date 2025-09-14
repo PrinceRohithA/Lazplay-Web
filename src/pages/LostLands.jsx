@@ -38,7 +38,7 @@ const LostLands = () => {
               <iframe 
                 className="game-embed"
                 title="Lost Lands Game"
-                src="/games/lost-lands/index.html"
+                src="/games/lost-lands/Lost Lands.html"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

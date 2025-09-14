@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-column">
-            <h3>GameHub Premium</h3>
+            <h3>Lazplay</h3>
             <p>Your exclusive destination for premium gaming experiences.</p>
             <div className="social-links">
               <a href="#"><i className="fab fa-facebook-f"></i></a>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="copyright">
-          <p>&copy; 2023 GameHub Premium. All rights reserved.</p>
+          <p>&copy; 2025 Lazplay. All rights reserved.</p>
         </div>
       </div>
     </footer>

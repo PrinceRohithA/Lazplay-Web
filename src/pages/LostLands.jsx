@@ -48,7 +48,7 @@ const LostLands = () => {
           <div className="game-details">
             <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Lost Lands" style={{width: '100%', borderRadius: '10px', marginBottom: '20px'}} />
             
-            <a href="#play" className="btn" style={{display: 'block', textAlign: 'center', marginBottom: '30px'}}>Play Now</a>
+            <center><button href="#play" className="btn" style={{display: 'block', textAlign: 'center', marginBottom: '30px'}}>Play Now</button></center>
             
             <h3>Game Details</h3>
             <div className="detail-item">

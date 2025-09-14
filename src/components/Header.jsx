@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header-content">
           <Link to="/" className="logo">
             <i className="fas fa-crown"></i>
-            <span>GameHub Premium</span>
+            <span>Lazplay</span>
           </Link>
           <nav>
             <ul>
